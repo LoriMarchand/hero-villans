@@ -2,7 +2,7 @@ package com.lmig.gfc.travel_site.hero_and_villians.models;
 
 import java.util.Random;
 
-public class Hero extends LivingThing {
+public class Hero extends LivingThing {	
 
 	private String secretIdentity;
 	public Hero(String name, int health, String secretIdentity) {
@@ -12,15 +12,17 @@ public class Hero extends LivingThing {
 	
 	public void attack(LivingThing livingThing) {
 		
-		int monsterDamage= getRandomNumberInRange(1, 10);
 		
-		int heroDamage= getRandomNumberInRange(1, 10);
+		int livingThingDamage = this.getRandomNumberInRange(1,10);
 		
-		livingThing.setHealth( livingThing.getHealth() - monsterDamage );
-		setHealth(getHealth() - heroDamage);
+		int heroDamage = this.getRandomNumberInRange(1,10);
+		
+		livingThing.setHealth(livingThing.getHealth()-livingThingDamage);
+		
+		this.setHealth(this.getHealth()-heroDamage);
 		
 	}
-	
+				
 	private int getRandomNumberInRange(int min, int max) {
 		Random random = new Random();
 		return random.nextInt((max - min) + 1) + min;
@@ -30,6 +32,8 @@ public class Hero extends LivingThing {
 		return secretIdentity;
 	}
 
+	
+	}
 
-}
+
 
