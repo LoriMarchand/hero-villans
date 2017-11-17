@@ -11,8 +11,7 @@ public class LivingThing {
 		
 	}
 	
-	
-	public boolean isAlive() {
+		public boolean isAlive() {
 		if(health > 0) {
 			return true;
 		}
@@ -24,6 +23,9 @@ public class LivingThing {
 	}
 
 	public void setHealth(int health) {
+		if(health <0) {
+			health =0;
+		}
 		this.health = health;
 	}
 
